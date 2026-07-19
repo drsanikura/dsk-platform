@@ -1,5 +1,8 @@
 import { medicalTopics } from "@/data/medicalTopics";
 
+import MedicalSection from "@/components/medical/MedicalSection";
+import MedicalList from "@/components/medical/MedicalList";
+import FAQ from "@/components/medical/FAQ";
 
 interface TopicPageProps {
   params: Promise<{
@@ -34,140 +37,103 @@ export default async function TopicPage({
 
 
 
-  return (
-    <main className="min-h-screen bg-slate-950 text-white">
+ return (
+
+<main className="min-h-screen bg-slate-950 text-white">
 
 
-      {/* Hero */}
-
-      <section className="mx-auto max-w-5xl px-6 py-24">
+<section className="mx-auto max-w-5xl px-6 py-24">
 
 
-        <p className="text-sm uppercase tracking-[0.25em] text-emerald-400">
-          {topicData.category}
-        </p>
+<p className="text-sm uppercase tracking-widest text-emerald-400">
+{topicData.category}
+</p>
 
 
-        <h1 className="mt-5 text-5xl font-bold">
-          {topicData.title}
-        </h1>
+<h1 className="mt-5 text-5xl font-bold">
+{topicData.title}
+</h1>
 
 
-        <p className="mt-8 max-w-3xl text-xl leading-relaxed text-slate-300">
-          {topicData.introduction}
-        </p>
+<p className="mt-8 text-xl text-slate-300">
+{topicData.introduction}
+</p>
 
 
-      </section>
-
-
-
-      {/* Overview */}
-
-      <section className="mx-auto max-w-5xl px-6 pb-16">
-
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8">
-
-
-          <h2 className="text-3xl font-semibold">
-            Overview
-          </h2>
-
-
-          <p className="mt-5 leading-relaxed text-slate-300">
-            {topicData.overview}
-          </p>
-
-
-        </div>
-
-
-      </section>
+</section>
 
 
 
-      {/* Symptoms */}
-
-      <section className="mx-auto max-w-5xl px-6 pb-16">
-
-
-        <h2 className="text-3xl font-semibold">
-          Common Symptoms
-        </h2>
-
-
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-
-
-          {topicData.symptoms.map((symptom) => (
-
-            <div
-              key={symptom}
-              className="
-                rounded-xl
-                border
-                border-slate-800
-                bg-slate-900
-                p-5
-                text-slate-300
-              "
-            >
-
-              {symptom}
-
-            </div>
-
-          ))}
-
-
-        </div>
-
-
-      </section>
+<MedicalSection
+title="Overview"
+content={topicData.overview}
+/>
 
 
 
-      {/* Prevention */}
-
-      <section className="mx-auto max-w-5xl px-6 pb-24">
-
-
-        <h2 className="text-3xl font-semibold">
-          Prevention & Healthy Living
-        </h2>
+<MedicalList
+title="Causes"
+items={topicData.causes}
+/>
 
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+
+<MedicalList
+title="Risk Factors"
+items={topicData.riskFactors}
+/>
 
 
-          {topicData.prevention.map((item) => (
 
-            <div
-              key={item}
-              className="
-                rounded-xl
-                border
-                border-slate-800
-                bg-slate-900
-                p-5
-                text-slate-300
-              "
-            >
-
-              {item}
-
-            </div>
-
-          ))}
+<MedicalList
+title="Symptoms"
+items={topicData.symptoms}
+/>
 
 
-        </div>
+
+<MedicalList
+title="Diagnosis"
+items={topicData.diagnosis}
+/>
 
 
-      </section>
+
+<MedicalList
+title="Treatment"
+items={topicData.treatment}
+/>
 
 
-    </main>
-  );
+
+<MedicalList
+title="Prevention & Healthy Living"
+items={topicData.prevention}
+/>
+
+
+
+<MedicalList
+title="Possible Complications"
+items={topicData.complications}
+/>
+
+
+
+<MedicalList
+title="When To Seek Medical Help"
+items={topicData.whenToSeekHelp}
+/>
+
+
+
+<FAQ
+items={topicData.faq}
+/>
+
+
+
+</main>
+
+);
 }
