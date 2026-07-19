@@ -1,3 +1,5 @@
+import Button from "@/components/ui/Button";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -19,13 +21,13 @@ export default function Home() {
 
         <div className="mt-8 flex gap-4">
 
-          <button className="rounded-full bg-emerald-400 px-6 py-3 font-semibold text-slate-950">
+          <Button>
             Explore Health Library
-          </button>
+          </Button>
 
-          <button className="rounded-full border border-slate-500 px-6 py-3">
+          <Button variant="secondary">
             Watch Latest Videos
-          </button>
+          </Button>
 
         </div>
 
