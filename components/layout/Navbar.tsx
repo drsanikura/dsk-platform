@@ -20,7 +20,7 @@ export default function Navbar() {
             Home
           </a>
 
-          <a href="/library" className="hover:text-white">
+          <a href="/health-library" className="hover:text-white">
             Health Library
           </a>
 

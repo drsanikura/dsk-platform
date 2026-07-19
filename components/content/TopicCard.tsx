@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "@/components/ui/Card";
 
 interface TopicCardProps {
@@ -11,6 +12,9 @@ export default function TopicCard({
   description,
   category,
 }: TopicCardProps) {
+
+  const slug = title.toLowerCase().replaceAll(" ", "-");
+
   return (
     <Card>
 
@@ -18,13 +22,28 @@ export default function TopicCard({
         {category}
       </p>
 
-      <h3 className="mt-3 text-2xl font-semibold">
+      <h3 className="mt-3 text-2xl font-semibold text-white">
         {title}
       </h3>
 
       <p className="mt-3 text-slate-300">
         {description}
       </p>
+
+
+      <Link
+        href={`/health-library/${slug}`}
+        className="
+          mt-6
+          inline-block
+          text-emerald-400
+          font-medium
+          hover:text-emerald-300
+        "
+      >
+        Learn More →
+      </Link>
+
 
     </Card>
   );
