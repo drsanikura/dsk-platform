@@ -2,8 +2,8 @@ import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6">
+    <main className="bg-slate-950 text-white">
+      <section className="mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6">
 
         <p className="mb-4 text-sm uppercase tracking-widest text-emerald-400">
           Evidence-led health education
