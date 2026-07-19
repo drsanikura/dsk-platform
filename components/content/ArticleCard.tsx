@@ -2,57 +2,40 @@ import Card from "@/components/ui/Card";
 
 interface ArticleCardProps {
   title: string;
-  excerpt: string;
-  author?: string;
-  date?: string;
+  category: string;
+  readTime: string;
+  summary: string;
 }
+
 
 export default function ArticleCard({
   title,
-  excerpt,
-  author,
-  date,
+  category,
+  readTime,
+  summary,
 }: ArticleCardProps) {
+
   return (
     <Card>
 
-      <p className="text-xs uppercase tracking-widest text-emerald-400">
-        Article
+      <p className="text-sm uppercase tracking-widest text-emerald-400">
+        {category}
       </p>
 
-      <h3 className="mt-3 text-xl font-semibold text-white">
+
+      <h3 className="mt-3 text-2xl font-semibold">
         {title}
       </h3>
 
+
       <p className="mt-3 text-slate-300">
-        {excerpt}
+        {summary}
       </p>
 
 
-      <div className="mt-6 flex justify-between text-sm text-slate-400">
-
-        <span>
-          {author ?? "Dr. Sani Kura"}
-        </span>
-
-        <span>
-          {date ?? "Medical Education"}
-        </span>
-
-      </div>
-
-
-      <button
-        className="
-          mt-6
-          text-sm
-          font-medium
-          text-emerald-400
-          hover:text-emerald-300
-        "
-      >
-        Read Article →
-      </button>
+      <p className="mt-5 text-sm text-slate-400">
+        {readTime}
+      </p>
 
     </Card>
   );
