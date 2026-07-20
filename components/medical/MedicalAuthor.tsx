@@ -1,3 +1,5 @@
+import { medicalAuthor } from "@/data/medicalAuthor";
+
 export default function MedicalAuthor() {
   return (
     <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -7,11 +9,15 @@ export default function MedicalAuthor() {
       </p>
 
       <h3 className="mt-3 text-xl font-semibold text-white">
-        Dr. Abubakar Muhammad Sani
+        {medicalAuthor.name}
       </h3>
 
       <p className="mt-2 text-slate-300">
-        Physician | Evidence-based Health Education
+        {medicalAuthor.role} | {medicalAuthor.description}
+      </p>
+
+      <p className="mt-3 text-sm text-slate-400">
+        Last reviewed: {medicalAuthor.lastReviewed}
       </p>
 
       <p className="mt-3 text-sm text-slate-400">

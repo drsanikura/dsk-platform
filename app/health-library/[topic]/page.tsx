@@ -6,6 +6,8 @@ import FAQ from "@/components/medical/FAQ";
 import MedicalAuthor from "@/components/medical/MedicalAuthor";
 import MedicalDisclaimer from "@/components/medical/MedicalDisclaimer";
 import RelatedTopics from "@/components/medical/RelatedTopics";
+import Breadcrumbs from "@/components/navigation/Breadcrumbs";
+import MedicalMetadata from "@/components/medical/MedicalMetadata";
 
 interface TopicPageProps {
   params: Promise<{
@@ -43,7 +45,21 @@ export default async function TopicPage({
  return (
 
 <main className="min-h-screen bg-slate-950 text-white">
-
+<Breadcrumbs
+  items={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Health Library",
+      href: "/health-library",
+    },
+    {
+      label: topicData.title,
+    },
+  ]}
+/>
 
 <section className="mx-auto max-w-5xl px-6 py-24">
 
@@ -61,6 +77,8 @@ export default async function TopicPage({
 <p className="mt-8 text-xl text-slate-300">
 {topicData.introduction}
 </p>
+
+<MedicalMetadata />
 
 
 </section>
