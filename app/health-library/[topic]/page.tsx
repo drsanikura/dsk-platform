@@ -5,6 +5,7 @@ import MedicalList from "@/components/medical/MedicalList";
 import FAQ from "@/components/medical/FAQ";
 import MedicalAuthor from "@/components/medical/MedicalAuthor";
 import MedicalDisclaimer from "@/components/medical/MedicalDisclaimer";
+import RelatedTopics from "@/components/medical/RelatedTopics";
 
 interface TopicPageProps {
   params: Promise<{
@@ -132,7 +133,12 @@ items={topicData.whenToSeekHelp}
 
 
 <FAQ
-items={topicData.faq}
+ items={topicData.faq}
+/>
+
+
+<RelatedTopics
+ topics={topicData.relatedTopics}
 />
 
 
