@@ -1,5 +1,6 @@
 export interface MedicalTopic {
   title: string;
+
   category: string;
 
   introduction: string;
@@ -25,5 +26,10 @@ export interface MedicalTopic {
   faq: {
     question: string;
     answer: string;
+  }[];
+
+  relatedTopics: {
+    title: string;
+    slug: string;
   }[];
 }

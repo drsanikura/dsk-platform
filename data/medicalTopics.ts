@@ -97,22 +97,28 @@ export const medicalTopics: Record<string, MedicalTopic> = {
           "Many forms of diabetes can be effectively managed with appropriate treatment and monitoring.",
       },
     ],
-
+        relatedTopics: [
+      {
+        title: "Hypertension",
+        slug: "hypertension",
+      },
+      {
+        title: "Heart Health",
+        slug: "heart-health",
+      },
+    ],
   },
 
 
   hypertension: {
-
     title: "Hypertension",
 
     category: "Heart Health",
 
-    introduction:
-      "Hypertension is a condition where blood pressure remains consistently elevated.",
+    introduction: "Hypertension is a condition where blood pressure remains consistently elevated.",
 
 
-    overview:
-      "High blood pressure can increase the risk of heart disease, stroke and kidney problems.",
+    overview: "High blood pressure can increase the risk of heart disease, stroke and kidney problems.",
 
 
     causes: [
@@ -181,11 +187,18 @@ export const medicalTopics: Record<string, MedicalTopic> = {
     faq: [
       {
         question: "Can hypertension be controlled?",
-        answer:
-          "Yes. Many people successfully control blood pressure through lifestyle changes and prescribed medication.",
+        answer: "Yes. Many people successfully control blood pressure through lifestyle changes and prescribed medication.",
+      },
+    ],
+        relatedTopics: [
+      {
+        title: "Diabetes",
+        slug: "diabetes",
       },
     ],
 
   },
-
+  
+  
+  
 };
